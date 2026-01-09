@@ -1,0 +1,6 @@
+.row {
+  padding-left: 40px;
+}
+.row:first-child {
+  padding-top: 40px;
+}

@@ -1,1 +1,30 @@
-<p>signal-comp works!</p>
+<div class="row">
+    <div class="col">
+        <!-- HOW TO ACCESS A SIGNAL (USE () AT THE END OF SIGNAL NAME) -->
+        <p>Coursename = {{ courseName() }} </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">Student Row Number = {{ rollNumber() }} </div>
+</div><br>
+<div class="row">
+    <!-- HOW TO ACCESS A SIGNAL WHICH IS AN OBJECT -->
+    <div class="col">
+        <p><strong>Student Details:</strong></p>
+        <p>Name = {{ studentDetails().name }} </p>
+        <p>City = {{ studentDetails().city }} </p>
+    </div>
+</div><br>
+<div class="row">
+    <!-- HOW TO ACCESS A SIGNAL WHICH IS AN ARRAY -->
+    <div class="col">
+        <p><strong>City List:</strong></p>
+        <p>Name = {{ cityList() }} </p>
+    </div>
+</div><br>
+<div class="row">
+    <!-- HOW TO CHANGE A SIGNAL -->
+    <div class="col">
+       <button (click)="onChangeCourseName()">Change Course Name</button>
+    </div>
+</div>
