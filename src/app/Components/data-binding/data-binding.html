@@ -20,5 +20,42 @@
         <p [class]="className">This is a class test</p>
       </td>
     </tr>
+     <tr>
+      <td>
+        <input [type]="inputType">
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <!-- USING EVENT BINDING (()) -->
+        <button (click)="showMessage()">Display Message</button>
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <!-- USING EVENT BINDING (()) FOR STATE CHANGES-->
+        <select (change)="onStateChanged()">
+          <option value="" disabled selected>Select a city</option>
+          <option value="Aba">Aba</option>
+          <option value="Ph">Ph</option>
+          <option value="Abj">Abj</option>
+        </select>
+      </td>
+    </tr>
+    <!-- USING TWO WAY DATABINDING [()] -->
+      <tr>
+      <td>
+        <input type="text" [(ngModel)]="courseName">
+      </td>
+    </tr>
+    <!-- PASSING VALUE TO FXN -->
+      <tr>
+      <td>
+        <button (click)="onChangeCourseName('Java')">Change Course Name to Java</button>
+      </td>
+      <td>
+        <button (click)="onChangeCourseName('dot net')">Change Course Name to Dot Net</button>
+      </td>
+    </tr>
   </tbody>
 </table>
