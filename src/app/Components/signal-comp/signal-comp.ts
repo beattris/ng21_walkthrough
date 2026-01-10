@@ -25,13 +25,13 @@ export class SignalComp {
     this.courseName.set("Java")
   };
 
-  constructor() {
-    console.log('Before' + this.courseName());
+  // constructor() {
+  //   console.log('Before' + this.courseName());
 
-    setTimeout(() => {
-      // TO CHANGE A 'SIGNAL' YOU USE THE SET() METHOD
-      this.courseName.set('VUE JS');
-      console.log('After' + this.courseName());
-    }, 3000);
-  }
+  //   setTimeout(() => {
+  //     // TO CHANGE A 'SIGNAL' YOU USE THE SET() METHOD
+  //     this.courseName.set('VUE JS');
+  //     console.log('After' + this.courseName());
+  //   }, 3000);
+  // }
 }

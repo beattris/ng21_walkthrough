@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col">
+    <input type="checkbox" [(ngModel)]="isOfferCodeChecked" /> Do you have an offer code?
+  </div>
+  <!-- USING AT IF, TO SHOW OR HIDE ELEMENTS -->
+  @if (isOfferCodeChecked == true) {
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Enter your offer code" />
+  </div>
+  }
+</div>
+<hr />
+<div class="row">
+  <div class="col">
+    @if (isSuccessDivVisible() == true) {
+    <div class="bg-success text-white p-2">Success Div</div>
+    <br />
+    }@else {
+    <div class="bg-danger text-white p-2">Error Div</div>
+    }
+  </div>
+  <div class="col">
+    <button class="btn btn-success" (click)="toggleDivVisibility()">Toggle</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="%" [(ngModel)]="studentScore" />
+  </div>
+  <!-- USING MULTIPLE ELSE STATEMENTS (@ELSE IF(){}) -->
+  <div class="col">
+    @if (studentScore > 70) {
+    <strong class="text-success">Student Has A Grade</strong>
+    }@else if (studentScore < 70 && studentScore > 50) {
+        <span class="text-secondary">Student Has B Grade</span>
+    }@else if (studentScore < 50 && studentScore > 35) {
+        <span class="text-primary">Student Has C Grade</span>
+    }@else {
+        @if (studentScore == 0) {
+            <span>Enter Student Score</span>
+        }@else {
+            <span class="text-danger">Student Failed</span>
+        }
+    }
+  </div>
+</div>
