@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-control-flow-comp',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule],
   templateUrl: './control-flow-comp.html',
   styleUrl: './control-flow-comp.css',
 })
