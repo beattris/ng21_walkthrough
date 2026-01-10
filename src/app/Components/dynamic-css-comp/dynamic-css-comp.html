@@ -1,23 +1,72 @@
-<div class="row m-4">
-    <div class="col">
-        <div class="p-4" [ngClass]="myClassName">
-            DIV 1
+<div class="row m-2">
+  <div class="col-6" [ngClass]="isSidePanelOpen() == true? 'col-6': 'col-12'">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-8">List</div>
+          <div class="col-4 text-end">
+            <button class="btn btn-success" (click)="openSidePanel()">Open</button>
+          </div>
         </div>
+      </div>
+      <div class="card-body">
+        <div class="row m-4">
+          <div class="col">
+            <div class="p-4" [ngClass]="myClassName">DIV 1</div>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="myClassName" />
+          </div>
+          <div class="col">
+            <button
+              class="btn"
+              (click)="isActive = !isActive"
+              [ngClass]="isActive == true ? 'btn-success' : 'btn-danger'"
+            >
+              Status
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="row m-4">
+          <h4>ANOTHER USE CASE (NG CLASS)</h4>
+          <div class="col">
+            <p [ngClass]="productPrice > 500 ? 'text-danger' : 'text-primary'">
+              Price ${{ productPrice }}
+            </p>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="productPrice" />
+          </div>
+        </div>
+        <hr />
+      </div>
     </div>
-    <div class="col">
-        <input type="text" [(ngModel)]="myClassName">
+  </div>
+  @if (isSidePanelOpen()) {
+  <div class="col-5">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-8">Form</div>
+          <div class="col-4 text-end">
+            <button class="btn btn-danger" (click)="closeSidePanel()">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row m-4">
+          <h4>ANOTHER USE CASE (NG STYLE)</h4>
+          <div class="col">
+            <div class="p-4" [ngStyle]="{ 'background-color': divBackColor }">DIV 2</div>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="divBackColor" />
+          </div>
+          <div class="col" [ngStyle]="myCss">DIV 3</div>
+        </div>
+      </div>
     </div>
-    <div class="col">
-        <button class="btn" (click)="isActive = !isActive" [ngClass]="isActive == true ? 'btn-success' : 'btn-danger' ">Status</button>
-    </div>
-</div>
-<hr>
-<div class="row m-4">
-    <h4>ANOTHER USE CASE</h4>
-    <div class="col">
-        <p [ngClass]="productPrice > 500 ? 'text-danger' : 'text-primary' ">Price ${{productPrice}}</p>
-    </div>
-     <div class="col">
-        <input type="text" [(ngModel)]="productPrice">
-    </div>
+  </div>
+  }
 </div>
