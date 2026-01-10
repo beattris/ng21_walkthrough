@@ -24,6 +24,7 @@
   </div>
 </div>
 <hr />
+<h4>USING MULTIPLE IFS</h4>
 <div class="row">
   <div class="col">
     <input type="text" class="form-control" placeholder="%" [(ngModel)]="studentScore" />
@@ -33,15 +34,59 @@
     @if (studentScore > 70) {
     <strong class="text-success">Student Has A Grade</strong>
     }@else if (studentScore < 70 && studentScore > 50) {
-        <span class="text-secondary">Student Has B Grade</span>
+    <span class="text-secondary">Student Has B Grade</span>
     }@else if (studentScore < 50 && studentScore > 35) {
-        <span class="text-primary">Student Has C Grade</span>
+    <span class="text-primary">Student Has C Grade</span>
+    }@else { @if (studentScore == 0) {
+    <span>Enter Student Score</span>
     }@else {
-        @if (studentScore == 0) {
-            <span>Enter Student Score</span>
-        }@else {
-            <span class="text-danger">Student Failed</span>
-        }
+    <span class="text-danger">Student Failed</span>
+    } }
+</div>
+</div>
+<hr />
+<h4>USING FOR LOOP</h4>
+<div class="row">
+  <div class="col">
+    <ul>
+      @for (offer of offerList; track $index) {
+      <li>{{ offer }}</li>
+      }
+    </ul>
+  </div>
+  <div class="col">
+    @for (product of productCategoryList; track $index) {
+    <button class="btn btn-primary mx-2 mt-2">{{ product }}</button>
     }
   </div>
+</div>
+<hr>
+<h4>SHOWING SPECIFIC TYPE OF DATA WITH FOR LOOP</h4>
+<div class="row">
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                @for (employee of employeeList; track $index) {
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.city}}</td>
+                        <td>
+                            @if (employee.isActive == true) {
+                                <strong class="text-success">Active</strong>
+                            }@else {
+                                <strong class="text-danger">Not Active</strong>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
