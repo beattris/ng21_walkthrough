@@ -1,1 +1,23 @@
-<p>dynamic-css-comp works!</p>
+<div class="row m-4">
+    <div class="col">
+        <div class="p-4" [ngClass]="myClassName">
+            DIV 1
+        </div>
+    </div>
+    <div class="col">
+        <input type="text" [(ngModel)]="myClassName">
+    </div>
+    <div class="col">
+        <button class="btn" (click)="isActive = !isActive" [ngClass]="isActive == true ? 'btn-success' : 'btn-danger' ">Status</button>
+    </div>
+</div>
+<hr>
+<div class="row m-4">
+    <h4>ANOTHER USE CASE</h4>
+    <div class="col">
+        <p [ngClass]="productPrice > 500 ? 'text-danger' : 'text-primary' ">Price ${{productPrice}}</p>
+    </div>
+     <div class="col">
+        <input type="text" [(ngModel)]="productPrice">
+    </div>
+</div>
