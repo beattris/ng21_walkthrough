@@ -6,6 +6,7 @@ import { NotFoundComponent } from './Components/not-found-component/not-found-co
 import { ControlFlowComp } from './Components/control-flow-comp/control-flow-comp';
 import { DynamicCssComp } from './Components/dynamic-css-comp/dynamic-css-comp';
 import { UserMaster } from './Components/user-master/user-master';
+import { ReactiveForm } from './Components/reactive-form/reactive-form';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'databinding', pathMatch: 'full' },
@@ -15,5 +16,6 @@ export const routes: Routes = [
     { path: 'control-flow', component: ControlFlowComp },
     { path: 'dynamic-css', component: DynamicCssComp },
     { path: 'user-master', component: UserMaster },
+    { path: 'reactive-form', component: ReactiveForm },
   {path: '**', component: NotFoundComponent}
 ];

@@ -1,0 +1,45 @@
+<body>
+  <div class="form-wrapper">
+    <div class="card shadow-lg border-0 rounded-4">
+      <div class="card-body p-4">
+        <h3 class="text-center mb-4 fw-bold">User Information</h3>
+
+        <form [formGroup]="userForm">
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+             <!-- SHOWING VALIDATION/ERROR MESSAGES TO THE UI -->
+            @if (userForm.controls['name'].touched || userForm.controls['name'].dirty) {
+            <div class="text-danger">
+              @if (userForm.controls['name'].errors?.['required']) {
+              <span>This field is required</span>
+              }@else if (userForm.controls['name'].errors?.['minlength']) {
+              <span>Min 3 characters required</span>
+              }
+            </div>
+            }
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" formControlName="userName" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password" />
+          </div>
+
+          <div class="d-grid mt-4">
+            <button class="btn btn-primary btn-lg rounded-pill">Save User</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,17 @@
+body {
+  display: grid;
+  place-items: center;
+  background-color: #f8f9fa;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 520px;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
